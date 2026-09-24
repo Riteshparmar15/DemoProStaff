@@ -2,9 +2,11 @@ import { defineConfig } from 'vite'
 import react from '@vitejs/plugin-react'
 import tailwindcss from '@tailwindcss/vite'
 
-// GitHub Pages project site: https://riteshparmar15.github.io/DemoProStaff/
+// Local: /  ·  GitHub Pages: /DemoProStaff/
+const pagesBase = process.env.GITHUB_PAGES === 'true' ? '/DemoProStaff/' : '/'
+
 export default defineConfig({
-  base: '/DemoProStaff/',
+  base: pagesBase,
   plugins: [react(), tailwindcss()],
   server: {
     host: true,

@@ -6,6 +6,8 @@
   "scripts": {
     "dev": "vite --host --port 5173 --open",
     "build": "vite build",
+    "build:pages": "vite build",
+    "deploy:pages": "vite build && npx gh-pages -d dist -b gh-pages -m \"Deploy site to GitHub Pages\"",
     "lint": "oxlint",
     "preview": "vite preview --host --port 4173 --open",
     "start": "vite --host --port 5173 --open"
