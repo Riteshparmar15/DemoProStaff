@@ -1,0 +1,188 @@
+@import "tailwindcss";
+
+@theme {
+  /*
+   * ProStafff — Midnight Meridian (60 · 30 · 10)
+   * 60% ivory base · 30% ink-navy structure · 10% copper CTA
+   */
+  /* 60% — page background */
+  --color-cream: #f7f4ef;
+  /* 30% — headlines, dark cards, footer, body structure */
+  --color-navy: #1a2332;
+  --color-ink: #1a2332;
+  --color-raised: #1a2332;
+  --color-divider: #d8d2c8;
+  /* 10% — CTAs and display accents only */
+  --color-orange: #c45c26;
+  --color-orange-hi: #a34a1e;
+  --color-orange-light: #d4784a;
+  /* Soft fill / selection (tint of copper, not a 4th brand color) */
+  --color-accent-soft: #efe4da;
+  --color-orange-pale: #efe4da;
+  --theme-structure-rgb: 26, 35, 50;
+  --theme-base-rgb: 247, 244, 239;
+  --theme-accent-rgb: 196, 92, 38;
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "Space Grotesk", "Inter", ui-sans-serif, sans-serif;
+  --ease-enter: cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-smooth: cubic-bezier(0.22, 1, 0.36, 1);
+  --radius-card: 50px;
+  --radius-card-mobile: 24px;
+  --radius-hero: 58px;
+  --radius-hero-mobile: 32px;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    margin: 0;
+    background: var(--color-cream);
+    color: var(--color-ink);
+    font-family: var(--font-sans);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    overflow-x: hidden;
+  }
+
+  * {
+    box-sizing: border-box;
+  }
+
+  ::selection {
+    background: var(--color-accent-soft);
+    color: var(--color-ink);
+  }
+
+  p {
+    color: inherit;
+  }
+}
+
+@layer utilities {
+  .site-shell {
+    width: 100%;
+    max-width: 1120px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+
+  .site-shell-narrow {
+    max-width: 1000px;
+  }
+
+  @media (min-width: 768px) {
+    .site-shell {
+      padding-left: 1.5rem;
+      padding-right: 1.5rem;
+    }
+  }
+
+  .site-section {
+    padding-top: 4rem;
+    padding-bottom: 4rem;
+  }
+
+  @media (min-width: 768px) {
+    .site-section {
+      padding-top: 6rem;
+      padding-bottom: 6rem;
+    }
+  }
+
+  .text-body {
+    color: color-mix(in srgb, var(--color-navy) 72%, transparent);
+  }
+
+  .text-body-strong {
+    color: var(--color-ink);
+  }
+
+  .text-caption {
+    color: color-mix(in srgb, var(--color-navy) 55%, transparent);
+  }
+
+  .text-eyebrow {
+    color: color-mix(in srgb, var(--color-navy) 50%, transparent);
+  }
+
+  .text-on-dark {
+    color: color-mix(in srgb, var(--color-cream) 72%, transparent);
+  }
+
+  .text-on-dark-soft {
+    color: color-mix(in srgb, var(--color-cream) 62%, transparent);
+  }
+
+  .grid-bg {
+    background-image:
+      linear-gradient(to right, rgba(var(--theme-structure-rgb, 26, 35, 50), 0.045) 1px, transparent 1px),
+      linear-gradient(to bottom, rgba(var(--theme-structure-rgb, 26, 35, 50), 0.045) 1px, transparent 1px);
+    background-size: 72px 72px;
+  }
+
+  .grid-bg-dark {
+    background-image:
+      linear-gradient(to right, rgba(var(--theme-base-rgb, 247, 244, 239), 0.055) 1px, transparent 1px),
+      linear-gradient(to bottom, rgba(var(--theme-base-rgb, 247, 244, 239), 0.055) 1px, transparent 1px);
+    background-size: 72px 72px;
+  }
+
+  .cta-glow {
+    box-shadow: 0 6px 18px rgba(var(--theme-accent-rgb, 196, 92, 38), 0.18);
+  }
+
+  .radius-card {
+    border-radius: var(--radius-card-mobile);
+  }
+
+  .radius-hero {
+    border-radius: var(--radius-hero-mobile);
+  }
+
+  @media (min-width: 768px) {
+    .radius-card {
+      border-radius: var(--radius-card);
+    }
+    .radius-hero {
+      border-radius: var(--radius-hero);
+    }
+  }
+
+  .marquee-mask {
+    mask-image: linear-gradient(
+      to right,
+      transparent,
+      black 8%,
+      black 92%,
+      transparent
+    );
+    -webkit-mask-image: linear-gradient(
+      to right,
+      transparent,
+      black 8%,
+      black 92%,
+      transparent
+    );
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .marquee-track {
+      animation: none !important;
+      transform: none !important;
+    }
+  }
+}
+
+@keyframes marquee-rtl {
+  from {
+    transform: translate3d(0, 0, 0);
+  }
+  to {
+    transform: translate3d(-50%, 0, 0);
+  }
+}
