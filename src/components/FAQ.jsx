@@ -14,7 +14,7 @@ export default function FAQ() {
       <div className="site-shell site-shell-narrow">
         <Reveal className="text-center">
           <h2 className="font-display text-[clamp(2.3rem,5vw,4.2rem)] font-bold leading-[1.05] tracking-[-0.035em] text-navy">
-            Common questions
+            Before you apply
             <br />
             <span className="text-orange">Clear answers.</span>
           </h2>

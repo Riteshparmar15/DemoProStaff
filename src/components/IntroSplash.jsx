@@ -82,7 +82,7 @@ export default function IntroSplash({ onComplete }) {
                 animate={{ opacity: phase >= 1 ? 1 : 0, y: phase >= 1 ? 0 : 40 }}
                 transition={{ duration: 0.9, ease: easeEnter }}
               >
-                READY<span className="text-orange">.</span>
+                APPLY<span className="text-orange">.</span>
               </motion.div>
               <motion.p
                 className="mt-6 text-sm font-medium tracking-[0.18em] text-cream/70 uppercase md:text-base"
@@ -90,7 +90,7 @@ export default function IntroSplash({ onComplete }) {
                 animate={{ opacity: phase >= 2 ? 1 : 0 }}
                 transition={{ duration: 0.6, ease: easeSmooth }}
               >
-                From brief, to bench.
+                Retail jobs · India &amp; UAE
               </motion.p>
             </div>
           </div>

@@ -8,9 +8,8 @@ export const site = {
 export const company = {
   legalName: 'ProStafff Solution Private Limited',
   shortName: 'ProStafff',
-  tagline: 'Connecting Talent with Opportunity',
+  tagline: 'Your next retail role — India & UAE',
   registration: 'Private Limited Company · India',
-  /** Paste official numbers before public launch — leave blank to hide */
   cin: '',
   gstin: '',
   registeredOffice: 'Mumbai, Maharashtra, India',
@@ -23,26 +22,21 @@ export const company = {
   whatsappHref: 'https://wa.me/912248902140',
   linkedin: 'https://www.linkedin.com/company/prostafff-solution',
   responseSLA: 'We respond within 1 business day',
-  hours: 'Mon–Sat · 10:00–19:00 IST (covers UAE desk remotely)',
-  hoursGst: 'UAE briefs answered same IST window · GST ≈ IST − 1.5h',
+  hours: 'Mon–Sat · 10:00–19:00 IST (UAE profiles reviewed in the same window)',
+  hoursGst: 'UAE applications answered in the IST desk window · GST ≈ IST − 1.5h',
   uaeCoverage:
-    'UAE retail mandates are covered from our India HQ desk — same account owner, WhatsApp, and email. Local Dubai meetings by appointment.',
-  feeGuide: {
-    permanent: 'Permanent placements: transparent % of annual CTC quoted after brief (typical India retail retained/contingent bands shared in writing).',
-    seasonal: 'Seasonal / surge: day-rate or package quote by headcount, city, and peak window.',
-    executive: 'Executive / multi-site: retained search with staged fees and weekly milestones.',
-  },
+    'Apply for UAE retail roles from this site — profiles are reviewed by our India HQ desk with Dubai meetings arranged by appointment when required.',
   offices: [
     {
       city: 'Mumbai',
-      label: 'India HQ',
-      lines: ['Registered office · Maharashtra, India', 'Mon–Sat · 10:00–19:00 IST', 'Meetings by appointment'],
+      label: 'India HQ · Applications',
+      lines: ['Registered office · Maharashtra, India', 'Mon–Sat · 10:00–19:00 IST', 'Career queries welcome'],
     },
     {
       city: 'Dubai',
-      label: 'UAE coverage',
+      label: 'UAE · International roles',
       lines: [
-        'Covered remotely from India HQ',
+        'UAE applications reviewed from India HQ',
         'WhatsApp / email · IST business hours',
         'On-ground meetings by appointment',
       ],
@@ -51,10 +45,10 @@ export const company = {
 }
 
 export const trustSignals = [
-  { label: 'Focus', value: '100% retail staffing' },
+  { label: 'For', value: 'Job applicants only' },
   { label: 'Markets', value: 'India + UAE' },
-  { label: 'Models', value: 'Permanent · Seasonal · Executive' },
-  { label: 'Coverage', value: 'Store · Field · Corporate' },
+  { label: 'Paths', value: 'Permanent · Seasonal · Leadership' },
+  { label: 'Reply', value: '1 business day' },
 ]
 
 export const corporateFacts = () => [
@@ -63,82 +57,94 @@ export const corporateFacts = () => [
   { label: 'Registered office', value: company.registeredOffice },
   {
     label: 'CIN',
-    value: company.cin || 'Shared on the written engagement letter',
+    value: company.cin || 'Shared on written engagement documents',
   },
   {
     label: 'GSTIN',
-    value: company.gstin || 'Shared on the written engagement letter',
+    value: company.gstin || 'Shared on written engagement documents',
   },
 ]
 
 export const trustBar = [
-  { title: 'Retail-only desk', body: 'No generalist dilution — staffing built for store, field, and HQ retail.' },
-  { title: '1-business-day reply', body: 'Every brief and candidate profile gets a timed first response from our team.' },
-  { title: 'Replacement cover', body: 'Agreed replacement terms on placements that miss culture-fit standards.' },
-  { title: 'Clear fees', body: 'Transparent quotes after the brief — no surprise headline rates.' },
+  {
+    title: 'Free to apply · Both markets',
+    body: 'Never pay to submit a profile for India or UAE roles. Legitimate placements never charge candidates.',
+  },
+  {
+    title: '1-business-day reply',
+    body: 'India and UAE applications share one careers desk — same timed first response (IST; GST ≈ IST − 1.5h).',
+  },
+  {
+    title: 'India national + UAE international',
+    body: 'Equal desks: metros across India and Dubai / Abu Dhabi / Sharjah focus roles.',
+  },
+  {
+    title: '0 years welcome',
+    body: 'First-job associates through multi-site leaders — declare experience honestly and we match fit.',
+  },
 ]
 
 export const commitments = [
   {
-    title: 'Confidential briefs',
-    body: 'Employer searches stay confidential. Candidate data is used only for placement matching.',
+    title: 'Your data stays protected',
+    body: 'Profiles are used only for retail matching. We do not sell personal data.',
   },
   {
-    title: 'Culture-fit screening',
-    body: 'We screen for brand voice, service instinct, and operating discipline — not keywords alone.',
+    title: 'Honest role fit',
+    body: 'We shortlist when your experience and market preference match a live brief — not to fill quotas.',
   },
   {
-    title: 'Written scope',
-    body: 'Roles, timelines, markets, and fees are confirmed in writing before work begins.',
+    title: 'Clear next steps',
+    body: 'After you apply: review → shortlist → brand interview → offer support.',
   },
   {
-    title: 'Account ownership',
-    body: 'One accountable lead from brief through onboarding and early replacement cover.',
+    title: 'One careers contact',
+    body: 'One accountable desk from application through early onboarding questions.',
   },
 ]
 
 export const caseStudies = [
   {
-    tag: 'Seasonal surge',
-    sector: 'National lifestyle retail · India',
-    title: 'Festive floor coverage without diluting brand standards',
-    outcome: 'Structured brief → pre-vetted associate bench → phased city rollout with replacement cover.',
-    metrics: ['Multi-city surge', 'Culture-fit screens', 'Opening-week hypercare'],
+    tag: 'India · National',
+    sector: 'Lifestyle retail · Multi-city',
+    title: 'Associates placed into festive peak floors',
+    outcome: 'Applicants shortlisted by city and brand fit → interviews within days → store starts with opening-week support.',
+    metrics: ['Multi-city', 'Festive peak', 'Fast shortlist'],
   },
   {
-    tag: 'Luxury floor',
-    sector: 'Premium beauty destination · UAE',
-    title: 'Service-theatre talent for a flagship environment',
-    outcome: 'Role scorecard for hospitality + product fluency → shortlist within days → onboarding support.',
-    metrics: ['Flagship presence', 'Brand-voice screens', 'Confidential search'],
+    tag: 'UAE · International',
+    sector: 'Premium beauty · Flagship',
+    title: 'Service-theatre talent for a flagship floor',
+    outcome: 'UAE-ready profiles screened for hospitality and product fluency → brand interviews → onboarding alignment.',
+    metrics: ['Dubai focus', 'Brand voice', 'Visa-aware brief'],
   },
   {
-    tag: 'Leadership hire',
-    sector: 'Multi-site apparel · West India',
-    title: 'Area leadership for a growing cluster',
-    outcome: 'Retained process with weekly milestones → P&L-ready leader → 90-day check-ins.',
-    metrics: ['Retained search', 'Weekly milestones', '90-day support'],
+    tag: 'Leadership path',
+    sector: 'Apparel cluster · West India',
+    title: 'Store leaders moving into area ownership',
+    outcome: 'Experienced managers matched to multi-site briefs → structured interviews → 90-day check-in support.',
+    metrics: ['P&L ready', 'Cluster growth', '90-day support'],
   },
 ]
 
 export const testimonials = [
   {
     quote:
-      'The brief felt retail-native. Shortlists matched our floor standards, not generic job-board volume.',
-    role: 'HR Business Partner',
-    org: 'National apparel chain',
+      'I applied once, got a clear reply, and landed interviews that actually matched my store experience.',
+    role: 'Store Associate',
+    org: 'Placed · Lifestyle retail · India',
   },
   {
     quote:
-      'We needed festive coverage fast without compromising service theatre. The bench was ready and coached.',
-    role: 'Store Operations Lead',
-    org: 'Lifestyle multi-brand group',
+      'They explained the UAE process upfront — no false promises, just a serious shortlist for the right floor.',
+    role: 'Beauty Advisor',
+    org: 'Placed · Premium retail · UAE',
   },
   {
     quote:
-      'Clear fees, clear timelines, and one account owner. That alone made the process easier to trust.',
-    role: 'Talent Acquisition Manager',
-    org: 'Beauty & fragrance retail',
+      'As a store manager looking to step up, the brief and interview loop felt professional and respectful of my time.',
+    role: 'Store Manager',
+    org: 'Placed · Apparel · West India',
   },
 ]
 
@@ -146,19 +152,20 @@ export const policies = {
   privacy: {
     title: 'Privacy',
     points: [
-      'We collect contact and role details only to respond to hiring briefs or candidate profiles.',
-      'We do not sell personal data. Candidate information is shared with employers only for relevant opportunities with consent.',
-      'You may request correction or deletion of your data by emailing contact@prostafffsolution.com.',
-      'Website forms may be delivered via encrypted form relay and/or WhatsApp so your brief reaches our desk without requiring a local mail app. We use the data only to respond to your request.',
+      'We collect contact and role details only to match you to retail job opportunities.',
+      'We do not sell personal data. Your information is shared with employers only for relevant roles with your consent.',
+      'You may request correction or deletion by emailing careers@prostafffsolution.com.',
+      'Website forms may be delivered via encrypted form relay and/or WhatsApp so your application reaches our careers desk.',
     ],
   },
   terms: {
-    title: 'Engagement terms',
+    title: 'Application terms',
     points: [
-      'Website content is informational. Formal staffing agreements are confirmed in writing after a brief.',
-      'Fees, replacement cover, and timelines are scoped per mandate and shared before work starts.',
-      'Brand marks shown on this website identify retail house formats whose store networks we may hire into. They do not imply endorsement, partnership, or employment by those brands. Engagement scope is confirmed in writing per mandate.',
-      'ProStafff Solution Private Limited operates retail staffing services across India, with UAE mandates covered from the India HQ desk unless otherwise agreed in writing.',
+      'This website is for job applicants seeking retail roles in India and the UAE.',
+      'Submitting a profile does not guarantee an interview or offer; matching depends on live mandates and fit.',
+      'Brand marks identify retail house formats whose store networks we may place into. They do not imply endorsement or guaranteed employment by those brands.',
+      'ProStafff Solution Private Limited operates retail career placement across India, with UAE roles covered from the India HQ desk unless otherwise agreed in writing.',
+      'Candidates are never charged a fee by ProStafff to apply or to be considered for roles.',
     ],
   },
 }

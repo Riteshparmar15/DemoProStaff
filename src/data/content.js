@@ -1,16 +1,17 @@
 export const journeySteps = [
-  { id: '01', label: 'Brief', sub: 'Tell us the role' },
-  { id: '02', label: 'Source', sub: 'Tap our network' },
-  { id: '03', label: 'Screen', sub: 'Culture-fit checks' },
-  { id: '04', label: 'Place', sub: 'Brand-ready talent' },
-  { id: '05', label: 'Support', sub: 'Through onboarding' },
+  { id: '01', label: 'Apply', sub: 'Submit your profile' },
+  { id: '02', label: 'Match', sub: 'We review & shortlist' },
+  { id: '03', label: 'Interview', sub: 'Meet the brand team' },
+  { id: '04', label: 'Offer', sub: 'Role & location confirmed' },
+  { id: '05', label: 'Start', sub: 'Onboarding support' },
 ]
 
 export const navLinks = [
+  { label: 'Open roles', href: '#openings' },
   { label: 'About', href: '#about' },
-  { label: 'Services', href: '#services' },
+  { label: 'Opportunities', href: '#services' },
   { label: 'Roles', href: '#roles' },
-  { label: 'Proof', href: '#proof' },
+  { label: 'Why us', href: '#proof' },
   { label: 'FAQ', href: '#faq' },
 ]
 
@@ -30,63 +31,97 @@ export const luxuryBrands = [
 ]
 
 export const snapshotRows = [
-  { label: 'National & lifestyle retail', status: 'Core focus' },
-  { label: 'Luxury & beauty floors', status: 'Specialist desk' },
-  { label: 'E-commerce operations', status: 'Growing practice' },
+  { label: 'Markets', status: 'India · UAE · Equal desks' },
+  { label: 'Roles', status: 'Store · Field · HQ' },
+  { label: 'Response', status: '1 business day' },
+]
+
+export const indiaCities = [
+  'Mumbai',
+  'Delhi NCR',
+  'Bengaluru',
+  'Hyderabad',
+  'Chennai',
+  'Pune',
+]
+
+export const uaeCities = ['Dubai', 'Abu Dhabi', 'Sharjah']
+
+/** @deprecated use indiaCities + uaeCities */
+export const metroHints = [...indiaCities, ...uaeCities]
+
+export const liveOpenings = [
+  {
+    market: 'India — National',
+    flag: 'IN',
+    roles: [
+      { title: 'Store Associate', city: 'Mumbai · Delhi NCR · Bengaluru', type: 'Permanent / Seasonal' },
+      { title: 'Visual Merchandiser', city: 'Hyderabad · Pune', type: 'Permanent' },
+      { title: 'Store Manager', city: 'West & South India clusters', type: 'Leadership' },
+      { title: 'EOSS / Festive Floor Team', city: 'Multi-city India', type: 'Seasonal' },
+    ],
+  },
+  {
+    market: 'UAE — International',
+    flag: 'AE',
+    roles: [
+      { title: 'Beauty / Luxury Advisor', city: 'Dubai · Abu Dhabi', type: 'Permanent' },
+      { title: 'Store Associate', city: 'Dubai malls & high street', type: 'Permanent / Contract' },
+      { title: 'Assistant Store Manager', city: 'Dubai · Sharjah', type: 'Leadership' },
+      { title: 'Ramadan / Peak Floor Cover', city: 'UAE retail calendar', type: 'Seasonal' },
+    ],
+  },
 ]
 
 export const aboutPillars = [
   {
-    title: 'Deep Retail Network',
-    body: 'Access to pre-mapped talent across in-store, field, and corporate retail — ready for single-store or pan-India mandates.',
+    title: 'Brand-floor careers',
+    body: 'We place people into luxury, lifestyle, beauty, and sport stores — nationally across India and into UAE international mandates, with equal care on both desks.',
   },
   {
-    title: 'Culture-Fit Alignment',
-    body: 'We screen for brand voice, service instinct, and operating discipline so new hires feel like they already belong.',
+    title: 'Fair, clear process',
+    body: 'You know what happens after you apply: profile review, shortlist, brand interview, then offer support — no silent black holes. Freshers (0 years) are welcome.',
   },
   {
-    title: 'High-Volume Scaling',
-    body: 'Rapid deployment for festive calendars, new store launches, and omnichannel peaks without diluting quality.',
+    title: 'Right-fit matching',
+    body: 'We match your experience, city, market preference, and work authorization to roles where you can grow — not spray-and-pray job boards.',
   },
 ]
 
 export const services = [
   {
-    title: 'Permanent Staffing',
-    body: 'Long-term leadership and corporate retail executive roles. We hire store managers, category specialists, and HQ talent who stay, grow, and raise the bar.',
+    title: 'Permanent roles',
+    body: 'Long-term store, field, and HQ retail careers in both markets — built for people who want to grow with a brand.',
     points: [
-      'Store & cluster leadership',
-      'Buying, merchandising, HR & ops',
-      'Brand-aligned retained search',
+      'India: store & cluster leadership, HQ retail tracks',
+      'UAE: luxury / lifestyle floor and supervisory paths',
+      'Stable contracts with clear scope in either market',
     ],
-    accent: 'large',
   },
   {
-    title: 'Temporary & Seasonal Staffing',
-    body: 'Rapid deployment for festive peaks, sale events, and new store launches. Flexible benches of trained associates who can start fast and represent the brand well.',
+    title: 'Seasonal & contract',
+    body: 'Peak retail calendars in both countries — flexible roles when brands need strong floor energy fast.',
     points: [
-      'Festive & EOSS coverage',
-      'Launch-week floor teams',
-      'Short-term specialist cover',
+      'India: festive, Diwali, EOSS & launch-week teams',
+      'UAE: Ramadan, Dubai Shopping Festival & peak cover',
+      'Short-term specialist and opening crews',
     ],
-    accent: 'large',
   },
   {
-    title: 'Executive Search & Field Management',
-    body: 'Confidential search for area managers, store directors, and corporate specialists who can run multi-site P&L and complex omnichannel operations.',
+    title: 'Leadership & field',
+    body: 'Area managers, store directors, and multi-site roles for experienced retail leaders in India and the UAE.',
     points: [
-      'Area & district managers',
-      'Store directors & RM roles',
-      'Corporate retail specialists',
+      'India: multi-city cluster & district ownership',
+      'UAE: flagship and multi-site supervisory leadership',
+      'Corporate specialist moves in both markets',
     ],
-    accent: 'wide',
   },
 ]
 
 export const roleGroups = [
   {
     title: 'In-Store Roles',
-    tag: 'The brand on the floor',
+    tag: 'On the brand floor',
     items: [
       'Store Associates — service, conversion, and product knowledge.',
       'Cashiers — accurate, high-volume POS and checkout hospitality.',
@@ -95,7 +130,7 @@ export const roleGroups = [
   },
   {
     title: 'Field Management',
-    tag: 'Leadership that travels',
+    tag: 'Lead across stores',
     items: [
       'Store Managers — P&L, people, and customer experience ownership.',
       'Area / District Managers — multi-site growth, standards, and coaching.',
@@ -104,7 +139,7 @@ export const roleGroups = [
   },
   {
     title: 'Corporate Retail',
-    tag: 'The engine behind the brand',
+    tag: 'Behind the brand',
     items: [
       'Retail Merchandisers — range, buy, and in-season trading.',
       'Supply Chain — allocation, inbound, and network availability.',
@@ -115,78 +150,78 @@ export const roleGroups = [
 
 export const faqs = [
   {
-    q: "What's the minimum hiring volume?",
-    a: 'We support single critical hires through to multi-city seasonal benches. There is no rigid minimum — brief us on the role, location, and timeline and we scope accordingly.',
+    q: 'How do I apply for a retail job?',
+    a: 'Use the Apply form — choose India (national) or UAE (international), add your city, role, experience (0 years welcome), and work authorization if applying to the UAE. We reply within 1 business day.',
   },
   {
-    q: 'How fast can you deploy retail talent?',
-    a: 'For mapped roles and festive surges, shortlists often move within days. Permanent and executive searches follow a structured retained process with clear weekly milestones. First response to briefs is within 1 business day.',
+    q: 'Do you have open roles in India?',
+    a: 'Yes. See the Open roles strip for current India focus areas (Mumbai, Delhi NCR, Bengaluru, Hyderabad, Chennai, Pune and more). Mandates refresh often — submitting a profile keeps you in the matching pool.',
   },
   {
-    q: 'What does ProStafff cost?',
-    a: 'Permanent placements: a transparent percentage of annual CTC, quoted after the brief (India retained/contingent bands shared in writing — no surprise headline rates). Seasonal / surge: day-rate or package by headcount, city, and peak window. Executive / multi-site: retained search with staged fees and weekly milestones. Currency (INR or AED) follows the mandate market. No work starts without written scope.',
+    q: 'Can I apply for UAE / Dubai retail jobs?',
+    a: 'Yes. Select UAE — International on the form and tell us your work authorization (Emirates ID / residence visa, employment visa transfer, visit visa exploring options, or need employer sponsorship). We source UAE store, field, and corporate roles; visa and labour-card steps follow the hiring employer’s entity.',
   },
   {
-    q: 'What if a placement is not the right fit?',
-    a: 'We stand behind culture-fit screening and include replacement cover on agreed terms in the engagement letter. Account support continues after day one so issues are caught early.',
+    q: 'Who can apply for UAE roles?',
+    a: 'UAE residents with valid work rights, candidates open to visa transfer, and strong profiles exploring sponsorship — as long as you declare status honestly. We never charge candidates a fee and never guarantee a visa.',
   },
   {
-    q: "What if I don't have a job description yet?",
-    a: 'Start with outcomes — store format, brand tone, peak calendar, and must-have behaviours. We help translate that into a clear brief and scorecard before sourcing begins.',
+    q: 'Is there a fee to apply?',
+    a: 'No. Candidates never pay ProStafff to submit a profile or be considered for roles in India or the UAE. Beware of anyone asking for money to “guarantee” a job.',
   },
   {
-    q: 'Do you only hire for India?',
-    a: 'We serve India nationally and cover UAE retail mandates from our India HQ desk — same account owner, WhatsApp, and email, with Dubai meetings by appointment. Focus formats include luxury, lifestyle, beauty, sport, and e-commerce operations.',
+    q: 'What happens after I submit my profile?',
+    a: 'We review fit against live India and UAE mandates, shortlist where relevant, and coordinate brand interviews. First response within 1 business day (IST desk; UAE reviews in the same window, GST ≈ IST − 1.5h).',
   },
   {
-    q: 'How do UAE store hires and visas work?',
-    a: 'We source and screen talent for UAE store, field, and corporate retail roles. Visa, labour card, and onboarding steps follow the employer’s entity and local counsel — we align the brief and shortlist to your compliance window, we do not replace legal sponsorship advice.',
+    q: 'What experience do I need?',
+    a: 'From first-job associates (0 years) through multi-site leaders. Be honest about experience and brands you have worked with — reliability and culture fit matter as much as titles.',
+  },
+  {
+    q: 'Which brands might I work for?',
+    a: 'Luxury and international brand store networks nationally across India and for UAE mandates. Logo marks name house formats we may place into — not job guarantees or brand endorsements.',
   },
   {
     q: 'How is my data used?',
-    a: 'Employer briefs and candidate profiles are used only for staffing and matching. We do not sell personal data. You can request correction or deletion via contact@prostafffsolution.com.',
-  },
-  {
-    q: 'Which brands do you staff for?',
-    a: 'We find retail staff for luxury and international brand stores — nationally across India and for UAE mandates covered from India. Logo marks on this site name house formats whose store networks we may hire into; they are not endorsements or claims of employment by those brands.',
+    a: 'Your profile is used only for retail role matching in your chosen market(s). We do not sell personal data. Request correction or deletion via careers@prostafffsolution.com.',
   },
 ]
 
 export const footerGroups = [
   {
+    title: 'Apply',
+    links: [
+      { label: 'Submit profile', href: '#contact' },
+      { label: 'Retail roles', href: '#roles' },
+      { label: 'Opportunities', href: '#services' },
+      { label: 'Email careers', href: 'mailto:careers@prostafffsolution.com' },
+    ],
+  },
+  {
     title: 'Company',
     links: [
-      { label: 'About Us', href: '#about' },
-      { label: 'Services', href: '#services' },
-      { label: 'Proof & Process', href: '#proof' },
+      { label: 'About', href: '#about' },
+      { label: 'Why ProStafff', href: '#proof' },
       { label: 'FAQ', href: '#faq' },
-      { label: 'Contact Us', href: '#contact' },
+      { label: 'Brands we place into', href: '#brands-we-staff' },
     ],
   },
   {
-    title: 'For candidates',
+    title: 'Markets',
     links: [
-      { label: 'Submit Profile', href: '#contact' },
-      { label: 'Retail Roles', href: '#roles' },
-      { label: 'Email Careers', href: 'mailto:careers@prostafffsolution.com' },
-    ],
-  },
-  {
-    title: 'Explore',
-    links: [
-      { label: 'Permanent Staffing', href: '#services' },
-      { label: 'Seasonal Staffing', href: '#services' },
-      { label: 'Executive Search', href: '#services' },
-      { label: 'Brands We Staff', href: '#brands-we-staff' },
+      { label: 'India · National', href: '#openings' },
+      { label: 'UAE · International', href: '#openings' },
+      { label: 'WhatsApp apply', href: 'https://wa.me/912248902140' },
     ],
   },
   {
     title: 'Connect',
     links: [
       { label: '+91 22 4890 2140', href: 'tel:+912248902140' },
-      { label: 'contact@prostafffsolution.com', href: 'mailto:contact@prostafffsolution.com' },
+      { label: 'careers@prostafffsolution.com', href: 'mailto:careers@prostafffsolution.com' },
       { label: 'WhatsApp', href: 'https://wa.me/912248902140' },
       { label: 'LinkedIn', href: 'https://www.linkedin.com/company/prostafff-solution' },
     ],
   },
 ]
+

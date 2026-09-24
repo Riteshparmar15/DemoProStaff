@@ -48,11 +48,11 @@ export default function Footer() {
                 Stay in touch
               </p>
               <h2 className="mt-4 max-w-[16ch] font-display text-[clamp(2rem,3.8vw,3.2rem)] font-bold leading-[1.05] tracking-[-0.03em]">
-                Stay close to retail opportunities.
+                Get retail job updates.
               </h2>
               <p className="mt-4 max-w-md text-sm leading-relaxed text-cream/70 md:text-[15px]">
-                {company.tagline}. Retail-only staffing for national retailers, luxury brands,
-                and e-commerce — permanent, seasonal, and executive search across India and the UAE.
+                {company.tagline}. Free applications for permanent, seasonal, and leadership
+                retail roles across India and the UAE.
               </p>
               <p className="mt-3 text-xs text-cream/40">{company.registration}</p>
               <div className="mt-6 flex flex-wrap gap-3 text-sm text-cream/70">
@@ -95,21 +95,21 @@ export default function Footer() {
                     required
                     value={email}
                     onChange={(e) => setEmail(e.target.value)}
-                    placeholder="Enter your work email"
+                    placeholder="Enter your email"
                     className="min-h-[52px] flex-1 rounded-full border border-cream/15 bg-white/5 px-5 text-cream outline-none placeholder:text-cream/35 focus:border-orange"
                   />
                   <ArrowButton type="submit" className="shrink-0" disabled={status === 'submitting'}>
-                    {status === 'submitting' ? 'Sending…' : 'Request update'}
+                    {status === 'submitting' ? 'Sending…' : 'Get updates'}
                   </ArrowButton>
                 </form>
               )}
               <div className="mt-6 flex flex-wrap gap-4 text-sm">
                 <a href="#contact" className="inline-flex items-center gap-1 text-cream/70 hover:text-cream">
-                  Brief a hire
+                  Apply now
                   <ArrowUpRight className="h-3.5 w-3.5" />
                 </a>
                 <a href="#roles" className="inline-flex items-center gap-1 text-cream/70 hover:text-cream">
-                  Retail Roles
+                  Browse roles
                   <ArrowUpRight className="h-3.5 w-3.5" />
                 </a>
               </div>

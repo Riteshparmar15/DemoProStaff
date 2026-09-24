@@ -1,5 +1,4 @@
-import { journeySteps, snapshotRows } from '../data/content'
-import { company } from '../data/company'
+import { journeySteps, snapshotRows, indiaCities, uaeCities } from '../data/content'
 import ArrowButton from './ArrowButton'
 import Reveal from './Reveal'
 
@@ -8,12 +7,12 @@ export default function Hero() {
     <section
       id="top"
       className="relative overflow-hidden bg-cream pt-28 md:pt-36"
-      aria-label="From brief to brand-ready talent"
+      aria-label="Apply for retail jobs in India and the UAE"
     >
       <div className="pointer-events-none absolute inset-0 grid-bg opacity-40" />
 
       <div className="site-shell relative">
-        <Reveal y={30} scale={1} className="mb-10 hidden md:block">
+        <Reveal y={24} scale={1} className="mb-10 hidden md:block">
           <div className="grid grid-cols-5 gap-4">
             {journeySteps.map((step) => (
               <div key={step.id} className="border-t border-navy/20 pt-3">
@@ -26,7 +25,7 @@ export default function Hero() {
           </div>
         </Reveal>
 
-        <Reveal y={20} scale={1} className="mb-8 md:hidden">
+        <Reveal y={16} scale={1} className="mb-8 md:hidden">
           <div className="flex gap-3 overflow-x-auto pb-1 [-ms-overflow-style:none] [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
             {journeySteps.map((step) => (
               <div
@@ -42,56 +41,77 @@ export default function Hero() {
           </div>
         </Reveal>
 
-        <div className="grid items-center gap-10 lg:grid-cols-[1.15fr_0.85fr] lg:gap-12">
+        <div className="grid items-center gap-10 lg:grid-cols-[1.1fr_0.9fr] lg:gap-12">
           <div>
-            <Reveal y={40}>
-              <p className="mb-5 inline-flex items-center gap-2 rounded-full border border-navy/10 bg-white px-3 py-1.5 text-[11px] font-semibold tracking-[0.16em] text-navy/70 uppercase">
+            <Reveal y={32}>
+              <p className="mb-5 inline-flex flex-wrap items-center gap-2 rounded-full border border-navy/10 bg-white px-3 py-1.5 text-[11px] font-semibold tracking-[0.14em] text-navy/70 uppercase">
                 <span className="h-1.5 w-1.5 rounded-full bg-orange" />
-                Connecting Talent with Opportunity
+                India national · UAE international · Equal desks
               </p>
             </Reveal>
 
-            <Reveal delay={0.08} y={50}>
-              <h1 className="max-w-[14ch] font-display text-[clamp(2.6rem,7vw,5.4rem)] font-bold leading-[0.98] tracking-[-0.035em] text-ink">
-                From brief,{' '}
-                <span className="text-orange">to bench.</span>
+            <Reveal delay={0.06} y={40}>
+              <h1 className="max-w-[16ch] font-display text-[clamp(2.6rem,7vw,5.2rem)] font-bold leading-[0.98] tracking-[-0.035em] text-ink">
+                Apply once.{' '}
+                <span className="text-orange">Both markets.</span>
               </h1>
             </Reveal>
 
-            <Reveal delay={0.16} y={36} scale={1}>
+            <Reveal delay={0.12} y={28} scale={1}>
               <p className="mt-5 max-w-xl text-lg font-semibold text-ink md:text-xl">
-                Empowering Leading Retail Brands with Top-Tier Talent.
+                Retail careers across India and the UAE — permanent, seasonal, and leadership.
               </p>
               <p className="mt-3 max-w-xl text-[15px] leading-relaxed text-navy/70 md:text-base">
-                We connect high-performing retail talent with leading brands across India and
-                the UAE to drive customer satisfaction, sales growth, and operational excellence.
+                Free to apply. Freshers welcome. One careers desk reviews India and UAE
+                profiles with the same 1-business-day reply.
               </p>
             </Reveal>
 
-            <Reveal delay={0.24} y={28} scale={1} className="mt-8 flex flex-wrap gap-3">
-              <ArrowButton href={`mailto:${company.hiringEmail}`}>Brief a hire</ArrowButton>
-              <ArrowButton href="#roles" variant="outline">
-                View Retail Roles
+            <Reveal delay={0.18} y={24} scale={1} className="mt-8 flex flex-wrap gap-3">
+              <ArrowButton href="#contact">Apply now</ArrowButton>
+              <ArrowButton href="#openings" variant="outline">
+                View open roles
               </ArrowButton>
             </Reveal>
-            <Reveal delay={0.28} y={16} scale={1} className="mt-4">
-              <div className="flex flex-wrap gap-2">
-                {['Permanent', 'Seasonal', 'Executive'].map((tag) => (
-                  <span
-                    key={tag}
-                    className="rounded-full border border-navy/10 bg-white px-3 py-1 text-xs font-medium text-navy/70"
-                  >
-                    {tag}
-                  </span>
-                ))}
+
+            <Reveal delay={0.22} y={12} scale={1} className="mt-6 grid gap-4 sm:grid-cols-2">
+              <div className="rounded-2xl border border-navy/10 bg-white px-4 py-3">
+                <p className="text-[11px] font-semibold tracking-[0.12em] text-eyebrow uppercase">
+                  India · National
+                </p>
+                <div className="mt-2 flex flex-wrap gap-1.5">
+                  {indiaCities.map((city) => (
+                    <span
+                      key={city}
+                      className="rounded-full bg-cream px-2.5 py-1 text-[11px] font-medium text-navy/70"
+                    >
+                      {city}
+                    </span>
+                  ))}
+                </div>
+              </div>
+              <div className="rounded-2xl border border-navy/10 bg-white px-4 py-3">
+                <p className="text-[11px] font-semibold tracking-[0.12em] text-eyebrow uppercase">
+                  UAE · International
+                </p>
+                <div className="mt-2 flex flex-wrap gap-1.5">
+                  {uaeCities.map((city) => (
+                    <span
+                      key={city}
+                      className="rounded-full bg-cream px-2.5 py-1 text-[11px] font-medium text-navy/70"
+                    >
+                      {city}
+                    </span>
+                  ))}
+                </div>
               </div>
             </Reveal>
           </div>
 
-          <Reveal delay={0.18} y={60} className="relative">
+          <Reveal delay={0.12} y={40} className="relative">
             <div className="radius-hero border border-navy/8 bg-raised p-5 text-cream shadow-[0_30px_80px_rgba(37,36,34,0.18)] md:p-7">
               <p className="text-[11px] font-semibold tracking-[0.18em] text-cream/65 uppercase">
-                Retail staffing snapshot
+                Why apply here
               </p>
               <div className="mt-5 space-y-3">
                 {snapshotRows.map((row) => (
@@ -105,27 +125,17 @@ export default function Hero() {
                 ))}
               </div>
               <p className="mt-5 text-sm leading-relaxed text-cream/70">
-                From store associates to corporate leadership, we staff the full retail
-                ecosystem — permanently, seasonally, and at executive level.
+                Same apply path for Mumbai or Dubai — market-aware matching, honest visa
+                guidance, zero candidate fees.
               </p>
+              <div className="mt-6">
+                <ArrowButton href="#contact" variant="light" className="w-full justify-center sm:w-auto">
+                  Submit your profile
+                </ArrowButton>
+              </div>
             </div>
           </Reveal>
         </div>
-
-        <Reveal delay={0.2} y={48} className="mt-10 md:mt-14">
-          <div className="flex flex-col gap-3 rounded-[24px] border border-navy/8 bg-white/80 px-5 py-4 sm:flex-row sm:items-center sm:justify-between md:rounded-full md:px-6">
-            <div>
-              <p className="text-sm font-semibold text-ink">Candidates</p>
-              <p className="mt-0.5 text-sm text-navy/70">
-                Looking for a retail role in India or the UAE? Submit your profile and we&apos;ll
-                match you.
-              </p>
-            </div>
-            <ArrowButton href="#contact" variant="outline" className="shrink-0 self-start sm:self-auto">
-              Submit Profile
-            </ArrowButton>
-          </div>
-        </Reveal>
       </div>
     </section>
   )

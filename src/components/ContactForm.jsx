@@ -4,10 +4,15 @@ import ArrowButton from './ArrowButton'
 import { company } from '../data/company'
 import { submitLead } from '../lib/submitLead'
 
+const UAE_MARKETS = ['UAE — International', 'India or UAE']
+
 export default function Contact() {
-  const [status, setStatus] = useState('idle') // idle | submitting | delivered | fallback
+  const [status, setStatus] = useState('idle')
   const [error, setError] = useState('')
   const [fallback, setFallback] = useState(null)
+  const [market, setMarket] = useState('')
+
+  const needsVisa = UAE_MARKETS.includes(market)
 
   const resetOutcome = () => {
     setStatus('idle')
@@ -25,8 +30,11 @@ export default function Contact() {
       email: String(fd.get('email') || ''),
       phone: String(fd.get('phone') || ''),
       city: String(fd.get('city') || ''),
+      market: String(fd.get('market') || ''),
+      authorization: String(fd.get('authorization') || 'N/A — India only'),
       role: String(fd.get('role') || ''),
       experience: String(fd.get('experience') || ''),
+      notice: String(fd.get('notice') || ''),
       message: String(fd.get('message') || ''),
       type: 'candidate',
     }
@@ -35,8 +43,11 @@ export default function Contact() {
       `Email: ${fields.email}`,
       `Phone: ${fields.phone}`,
       `City: ${fields.city}`,
+      `Preferred market: ${fields.market}`,
+      `Work authorization: ${fields.authorization}`,
       `Preferred role: ${fields.role}`,
       `Experience: ${fields.experience} years`,
+      `Notice period: ${fields.notice}`,
       '',
       'Profile:',
       fields.message,
@@ -45,7 +56,7 @@ export default function Contact() {
     try {
       const result = await submitLead({
         to: company.careersEmail,
-        subject: `Candidate profile — ${fields.name}`,
+        subject: `Job application — ${fields.name} · ${fields.market}`,
         fields,
         messageBody,
       })
@@ -64,14 +75,14 @@ export default function Contact() {
       <div className="site-shell site-shell-narrow">
         <Reveal className="mx-auto max-w-2xl text-center">
           <p className="text-[11px] font-semibold tracking-[0.16em] text-eyebrow uppercase">
-            Contact Us
+            Apply now · India &amp; UAE
           </p>
           <h2 className="mt-4 font-display text-[clamp(2.1rem,4.4vw,3.5rem)] font-bold leading-[1.05] tracking-[-0.03em] text-ink">
-            Submit your retail profile.
+            One form. Both markets. Equal care.
           </h2>
           <p className="mx-auto mt-4 max-w-xl text-[15px] leading-relaxed text-navy/70 md:text-base">
-            Tell us your city, role, and experience. {company.responseSLA}. Brands can brief a hire
-            by email or WhatsApp below.
+            Free to apply. Choose India (national) or UAE (international). Freshers welcome
+            (0 years). {company.responseSLA}.
           </p>
         </Reveal>
 
@@ -83,14 +94,16 @@ export default function Contact() {
             <div className="rounded-[24px] bg-cream px-6 py-10 text-center">
               {status === 'delivered' ? (
                 <>
-                  <p className="text-xl font-bold text-ink">Profile received.</p>
-                  <p className="mt-2 text-navy/70">{company.responseSLA}.</p>
+                  <p className="text-xl font-bold text-ink">Application received.</p>
+                  <p className="mt-2 text-navy/70">
+                    {company.responseSLA}. India and UAE profiles share the same careers desk.
+                  </p>
                 </>
               ) : (
                 <>
                   <p className="text-xl font-bold text-ink">Send via WhatsApp (recommended)</p>
                   <p className="mt-2 text-navy/70">
-                    Your details are ready — WhatsApp works without an email app.
+                    Your details are ready — works for India and UAE applicants.
                   </p>
                 </>
               )}
@@ -106,22 +119,86 @@ export default function Contact() {
                   </ArrowButton>
                 )}
                 <ArrowButton variant="outline" className="!inline-flex" onClick={resetOutcome}>
-                  Send another
+                  Apply again
                 </ArrowButton>
               </div>
-              <p className="mt-5 text-sm text-navy/70">
-                Or call{' '}
-                <a className="font-semibold text-ink underline decoration-navy/25 underline-offset-2 hover:decoration-navy/50" href={company.phoneHref}>
-                  {company.phoneDisplay}
-                </a>
-              </p>
             </div>
           ) : (
             <form onSubmit={onSubmit} className="grid gap-4 sm:grid-cols-2">
               <Field label="Full Name" name="name" required />
               <Field label="Email" name="email" type="email" required />
-              <Field label="Phone (with country code)" name="phone" required />
+              <Field
+                label="Phone (with country code)"
+                name="phone"
+                required
+                hint="India +91 · UAE +971 · or your local code"
+              />
               <Field label="Current City" name="city" required />
+
+              <label className="block text-sm font-medium text-navy/70 sm:col-span-2">
+                Preferred market
+                <select
+                  name="market"
+                  required
+                  value={market}
+                  onChange={(e) => setMarket(e.target.value)}
+                  className="mt-2 w-full rounded-2xl border border-navy/10 bg-cream px-4 py-3 text-ink outline-none focus:border-orange"
+                >
+                  <option value="" disabled>
+                    Select market
+                  </option>
+                  <option value="India — National">India — National</option>
+                  <option value="UAE — International">UAE — International</option>
+                  <option value="India or UAE">Open to India or UAE</option>
+                </select>
+              </label>
+
+              {market === 'India — National' && (
+                <p className="sm:col-span-2 rounded-2xl border border-navy/8 bg-cream px-4 py-3 text-sm leading-relaxed text-navy/70">
+                  <span className="font-semibold text-ink">India eligibility: </span>
+                  Open to candidates across India metros and tier-2 cities. 0 years experience
+                  welcome for associate roles. No application fee.
+                </p>
+              )}
+
+              {needsVisa && (
+                <>
+                  <p className="sm:col-span-2 rounded-2xl border border-navy/8 bg-cream px-4 py-3 text-sm leading-relaxed text-navy/70">
+                    <span className="font-semibold text-ink">UAE eligibility: </span>
+                    Residents with work rights, transfer-ready candidates, and strong profiles
+                    exploring sponsorship may apply. Declare status honestly — we never charge a
+                    fee and never guarantee a visa. Labour card / sponsorship follows the
+                    employer&apos;s entity. {company.hoursGst}.
+                  </p>
+                  <label className="block text-sm font-medium text-navy/70 sm:col-span-2">
+                    Work authorization (UAE)
+                    <select
+                      name="authorization"
+                      required={needsVisa}
+                      className="mt-2 w-full rounded-2xl border border-navy/10 bg-cream px-4 py-3 text-ink outline-none focus:border-orange"
+                      defaultValue=""
+                    >
+                      <option value="" disabled>
+                        Select your status
+                      </option>
+                      <option value="Emirates ID / UAE residence — can work">
+                        Emirates ID / UAE residence — can work
+                      </option>
+                      <option value="Employment visa — open to transfer">
+                        Employment visa — open to transfer
+                      </option>
+                      <option value="Visit visa — exploring options">
+                        Visit visa — exploring options
+                      </option>
+                      <option value="Need employer sponsorship">
+                        Need employer sponsorship
+                      </option>
+                      <option value="Outside UAE — relocating">Outside UAE — relocating</option>
+                    </select>
+                  </label>
+                </>
+              )}
+
               <label className="block text-sm font-medium text-navy/70">
                 Preferred Role
                 <select
@@ -135,23 +212,61 @@ export default function Contact() {
                   </option>
                   <option>Store Associate</option>
                   <option>Visual Merchandiser</option>
+                  <option>Cashier / POS</option>
+                  <option>Beauty / Luxury Advisor</option>
                   <option>Store Manager</option>
                   <option>Area / Cluster Manager</option>
                   <option>Corporate / Operations</option>
                   <option>Other retail role</option>
                 </select>
               </label>
-              <Field label="Years of Experience" name="experience" type="number" required />
+
+              <label className="block text-sm font-medium text-navy/70">
+                Years of Experience
+                <input
+                  name="experience"
+                  type="number"
+                  min={0}
+                  step={1}
+                  required
+                  placeholder="0"
+                  className="mt-2 w-full rounded-2xl border border-navy/10 bg-cream px-4 py-3 text-ink outline-none focus:border-orange"
+                />
+                <span className="mt-1.5 block text-xs text-navy/55">
+                  0 years welcome — first-job associates encouraged
+                </span>
+              </label>
+
+              <label className="block text-sm font-medium text-navy/70 sm:col-span-2">
+                Notice period / availability
+                <select
+                  name="notice"
+                  required
+                  className="mt-2 w-full rounded-2xl border border-navy/10 bg-cream px-4 py-3 text-ink outline-none focus:border-orange"
+                  defaultValue=""
+                >
+                  <option value="" disabled>
+                    Select availability
+                  </option>
+                  <option>Immediate</option>
+                  <option>15 days</option>
+                  <option>30 days</option>
+                  <option>60 days</option>
+                  <option>90+ days</option>
+                </select>
+              </label>
+
               <label className="block text-sm font-medium text-navy/70 sm:col-span-2">
                 About you / Resume link
                 <textarea
                   name="message"
                   required
                   rows={4}
-                  placeholder="Short intro, brands you’ve worked with, or a resume link."
+                  placeholder="Short intro, brands you’ve worked with, or a resume / LinkedIn link."
                   className="mt-2 w-full resize-y rounded-2xl border border-navy/10 bg-cream px-4 py-3 text-ink outline-none focus:border-orange"
                 />
               </label>
+
               <div className="sm:col-span-2">
                 <label className="flex items-start gap-3 text-sm leading-relaxed text-navy/70">
                   <input
@@ -161,82 +276,62 @@ export default function Contact() {
                     className="mt-1 h-4 w-4 shrink-0 rounded border-navy/20 text-orange"
                   />
                   <span>
-                    I agree my profile may be used for relevant retail role matching, as
-                    described in our Privacy policy.
+                    I agree my profile may be used for retail job matching in my chosen
+                    market(s). I confirm I was not asked to pay any fee to apply.
                   </span>
                 </label>
               </div>
+
               {error && (
                 <p className="sm:col-span-2 text-sm font-medium text-ink" role="alert">
                   {error}
                 </p>
               )}
+
               <div className="sm:col-span-2">
                 <ArrowButton type="submit" showArrow disabled={status === 'submitting'}>
-                  {status === 'submitting' ? 'Sending…' : 'Submit Profile'}
+                  {status === 'submitting' ? 'Sending…' : 'Submit application'}
                 </ArrowButton>
               </div>
             </form>
           )}
         </Reveal>
 
-        <Reveal delay={0.14} className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
-          <a
-            href={company.phoneHref}
-            className="rounded-[24px] border border-navy/8 bg-white p-5 transition hover:border-navy/20"
-          >
-            <p className="text-[11px] font-semibold tracking-[0.14em] text-navy/40 uppercase">
-              Call India HQ
+        <Reveal delay={0.12} className="mt-8 grid gap-4 md:grid-cols-2">
+          <div className="rounded-[24px] border border-navy/8 bg-white p-5 md:p-6">
+            <p className="text-[11px] font-semibold tracking-[0.14em] text-eyebrow uppercase">
+              India · National desk
             </p>
-            <p className="mt-2 font-semibold text-ink">{company.phoneDisplay}</p>
+            <p className="mt-2 font-semibold text-ink">IST careers hours</p>
             <p className="mt-1 text-sm text-navy/70">{company.hours}</p>
-          </a>
-          <a
-            href={company.whatsappHref}
-            target="_blank"
-            rel="noreferrer"
-            className="rounded-[24px] border border-navy/8 bg-white p-5 transition hover:border-navy/20"
-          >
-            <p className="text-[11px] font-semibold tracking-[0.14em] text-navy/40 uppercase">
-              WhatsApp
+            <div className="mt-4 flex flex-wrap gap-3 text-sm font-semibold">
+              <a href={company.phoneHref} className="text-orange hover:text-orange-hi">
+                {company.phoneDisplay}
+              </a>
+              <a href={company.whatsappHref} target="_blank" rel="noreferrer" className="text-ink hover:text-navy/70">
+                WhatsApp
+              </a>
+            </div>
+          </div>
+          <div className="rounded-[24px] border border-navy/8 bg-white p-5 md:p-6">
+            <p className="text-[11px] font-semibold tracking-[0.14em] text-eyebrow uppercase">
+              UAE · International desk
             </p>
-            <p className="mt-2 font-semibold text-ink">India + UAE</p>
-            <p className="mt-1 text-sm text-navy/70">{company.responseSLA}</p>
-          </a>
-          <a
-            href={`mailto:${company.hiringEmail}`}
-            className="rounded-[24px] border border-navy/8 bg-white p-5 transition hover:border-navy/20"
-          >
-            <p className="text-[11px] font-semibold tracking-[0.14em] text-navy/40 uppercase">
-              Brands / hire
-            </p>
-            <p className="mt-2 break-all text-sm font-semibold text-ink">{company.hiringEmail}</p>
-            <p className="mt-1 text-sm text-navy/70">Employer briefs</p>
-          </a>
-          <a
-            href={company.linkedin}
-            target="_blank"
-            rel="noreferrer"
-            className="rounded-[24px] border border-navy/8 bg-white p-5 transition hover:border-navy/20"
-          >
-            <p className="text-[11px] font-semibold tracking-[0.14em] text-navy/40 uppercase">
-              LinkedIn
-            </p>
-            <p className="mt-2 font-semibold text-ink">ProStafff Solution</p>
-            <p className="mt-1 text-sm text-navy/70">Company page</p>
-          </a>
+            <p className="mt-2 font-semibold text-ink">Same desk · GST-aware</p>
+            <p className="mt-1 text-sm text-navy/70">{company.hoursGst}</p>
+            <p className="mt-2 text-sm leading-relaxed text-navy/70">{company.uaeCoverage}</p>
+            <div className="mt-4 flex flex-wrap gap-3 text-sm font-semibold">
+              <a href={company.whatsappHref} target="_blank" rel="noreferrer" className="text-orange hover:text-orange-hi">
+                WhatsApp (UAE applicants)
+              </a>
+              <a href={`mailto:${company.careersEmail}`} className="text-ink hover:text-navy/70">
+                {company.careersEmail}
+              </a>
+            </div>
+          </div>
         </Reveal>
 
-        <Reveal delay={0.16} className="mt-6 rounded-[24px] border border-navy/8 bg-white p-5 md:p-6">
-          <p className="text-[11px] font-semibold tracking-[0.14em] text-eyebrow uppercase">
-            UAE coverage
-          </p>
-          <p className="mt-2 text-sm leading-relaxed text-navy/70 md:text-[15px]">
-            {company.uaeCoverage} {company.hoursGst}.
-          </p>
-        </Reveal>
-
-        <Reveal delay={0.18} className="mt-6 grid gap-4 sm:grid-cols-2">
+        <Reveal delay={0.16} className="mt-6 grid gap-4 sm:grid-cols-2">
           {company.offices.map((office) => (
             <div
               key={office.city}
@@ -259,7 +354,7 @@ export default function Contact() {
   )
 }
 
-function Field({ label, name, type = 'text', required }) {
+function Field({ label, name, type = 'text', required, hint }) {
   return (
     <label className="block text-sm font-medium text-navy/70">
       {label}
@@ -269,6 +364,7 @@ function Field({ label, name, type = 'text', required }) {
         required={required}
         className="mt-2 w-full rounded-2xl border border-navy/10 bg-cream px-4 py-3 text-ink outline-none focus:border-orange"
       />
+      {hint ? <span className="mt-1.5 block text-xs text-navy/55">{hint}</span> : null}
     </label>
   )
 }

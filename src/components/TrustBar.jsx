@@ -5,7 +5,7 @@ export default function TrustBar() {
   return (
     <section
       className="bg-cream pt-8 pb-10 md:pt-10 md:pb-14"
-      aria-label="Why brands choose ProStafff"
+      aria-label="Why apply with ProStafff"
     >
       <div className="site-shell">
         <Reveal className="overflow-hidden radius-hero border border-navy/8 bg-white">

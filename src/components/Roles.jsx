@@ -1,4 +1,5 @@
 import Reveal from './Reveal'
+import ArrowButton from './ArrowButton'
 import { roleGroups } from '../data/content'
 
 export default function Roles() {
@@ -7,14 +8,14 @@ export default function Roles() {
       <div className="site-shell">
         <Reveal className="max-w-3xl">
           <p className="text-[11px] font-semibold tracking-[0.16em] text-eyebrow uppercase">
-            Retail Roles
+            Roles you can apply for
           </p>
           <h2 className="mt-4 font-display text-[clamp(2.1rem,4.4vw,3.6rem)] font-bold leading-[1.05] tracking-[-0.03em] text-navy">
-            The full retail ecosystem, covered
+            Find your place in retail
           </h2>
           <p className="mt-4 text-[15px] leading-relaxed text-navy/70 md:text-lg">
-            Whether you need floor energy, multi-store leadership, or HQ commercial
-            talent, we recruit across the complete retail stack.
+            From first floor shift to multi-store leadership and HQ commercial roles — tell us
+            where you belong and we&apos;ll match you.
           </p>
         </Reveal>
 
@@ -42,6 +43,10 @@ export default function Roles() {
             </Reveal>
           ))}
         </div>
+
+        <Reveal className="mt-10 flex justify-center md:mt-12">
+          <ArrowButton href="#contact">Apply with your preferred role</ArrowButton>
+        </Reveal>
       </div>
     </section>
   )

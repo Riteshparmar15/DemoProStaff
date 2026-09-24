@@ -4,19 +4,18 @@ import { caseStudies, testimonials, commitments } from '../data/company'
 
 export default function Proof() {
   return (
-    <section id="proof" className="site-section scroll-mt-28 bg-cream" aria-label="Proof and commitments">
+    <section id="proof" className="site-section scroll-mt-28 bg-cream" aria-label="Why apply with ProStafff">
       <div className="site-shell">
         <Reveal className="max-w-3xl">
           <p className="text-[11px] font-semibold tracking-[0.16em] text-eyebrow uppercase">
-            Proof & process
+            Why apply with us
           </p>
           <h2 className="mt-4 font-display text-[clamp(2.1rem,4.4vw,3.5rem)] font-bold leading-[1.05] tracking-[-0.03em] text-navy">
-            How mandates actually run — with written commitments.
+            Real placement paths — India national &amp; UAE international.
           </h2>
           <p className="mt-4 text-[15px] leading-relaxed text-navy/70 md:text-base">
-            Case patterns below are anonymised engagement examples that mirror how we work.
-            Brand marks elsewhere name retail houses whose stores we staff nationally and
-            internationally.
+            Examples below mirror how applications move from profile to interview. Brand marks
+            elsewhere name retail houses we may place into — not job guarantees.
           </p>
         </Reveal>
 
@@ -66,7 +65,7 @@ export default function Proof() {
         <Reveal className="mt-10 rounded-[28px] border border-navy/8 bg-white p-6 md:mt-14 md:rounded-[32px] md:p-8">
           <div className="flex flex-col gap-6 md:flex-row md:items-end md:justify-between">
             <div className="max-w-2xl">
-              <h3 className="text-xl font-bold text-navy">Written commitments</h3>
+              <h3 className="text-xl font-bold text-navy">Our promises to applicants</h3>
               <div className="mt-5 grid gap-4 sm:grid-cols-2">
                 {commitments.map((item) => (
                   <div key={item.title} className="border-t border-navy/8 pt-4">
@@ -77,7 +76,7 @@ export default function Proof() {
               </div>
             </div>
             <ArrowButton href="#contact" className="shrink-0 self-start md:self-auto">
-              Contact Us
+              Apply now
             </ArrowButton>
           </div>
         </Reveal>

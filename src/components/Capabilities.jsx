@@ -8,14 +8,14 @@ export default function Capabilities() {
       <div className="site-shell">
         <Reveal className="max-w-3xl">
           <p className="text-[11px] font-semibold tracking-[0.16em] text-eyebrow uppercase">
-            Services
+            Opportunities
           </p>
           <h2 className="mt-4 font-display text-[clamp(2.4rem,5vw,4rem)] font-bold leading-[1.02] tracking-[-0.035em] text-navy">
-            Three ways we staff retail.
+            Career paths for India &amp; the UAE.
           </h2>
           <p className="mt-4 max-w-2xl text-[15px] leading-relaxed text-navy/70 md:text-lg">
-            Permanent leadership, seasonal surge capacity, and executive search — delivered
-            by a team that lives the retail calendar.
+            Permanent growth, peak-season energy, and leadership — each path spelled out for
+            both national India and international UAE calendars.
           </p>
         </Reveal>
 
@@ -43,7 +43,7 @@ export default function Capabilities() {
         </div>
 
         <Reveal className="mt-10 flex justify-center md:mt-14">
-          <ArrowButton href="#contact">Contact Us</ArrowButton>
+          <ArrowButton href="#contact">Apply for a role</ArrowButton>
         </Reveal>
       </div>
     </section>

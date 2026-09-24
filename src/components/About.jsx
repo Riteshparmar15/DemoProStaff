@@ -14,14 +14,14 @@ export default function About() {
               About Us
             </p>
             <h2 className="mt-4 max-w-[16ch] font-display text-[clamp(2rem,4.2vw,3.4rem)] font-bold leading-[1.05] tracking-[-0.03em] text-ink">
-              We shape retail success stories, one hire at a time.
+              Built to place retail talent — not to sell staffing to you.
             </h2>
             <div className="mt-6 rounded-[28px] border border-navy/8 bg-raised p-6 text-cream md:p-7">
               <p className="text-[11px] font-semibold tracking-[0.16em] text-cream/70 uppercase">
-                People who carry the brand
+                For job applicants
               </p>
-              <p className="mt-3 max-w-[18ch] font-display text-2xl font-bold md:text-3xl">
-                Talent with flagship presence.
+              <p className="mt-3 max-w-[20ch] font-display text-2xl font-bold md:text-3xl">
+                India national · UAE international.
               </p>
             </div>
           </Reveal>
@@ -29,14 +29,14 @@ export default function About() {
           <div>
             <Reveal delay={0.1} y={40}>
               <p className="text-[15px] leading-relaxed text-navy/70 md:text-lg">
-                ProStafff Solution Private Limited is a retail-sector staffing partner for
-                national chains, luxury houses, and e-commerce operators across India — with UAE
-                mandates covered from our Mumbai HQ desk.
+                ProStafff Solution Private Limited helps retail professionals find roles with
+                national chains, luxury houses, and e-commerce operators across India — and UAE
+                international mandates covered from our Mumbai careers desk.
               </p>
               <p className="mt-4 text-[15px] leading-relaxed text-navy/70 md:text-lg">
-                From first-job store associates to corporate merchandisers and field
-                directors, we build teams that convert walk-ins into advocates, keep
-                fulfilment moving, and protect brand culture at scale.
+                This website is for job applicants only. Apply once with your city, market, and
+                experience — we match you to store, field, and corporate retail opportunities
+                where you can grow.
               </p>
             </Reveal>
             <Reveal delay={0.14} className="mt-6 overflow-hidden rounded-[24px] border border-navy/8 bg-white">

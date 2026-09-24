@@ -12,6 +12,8 @@ import FAQ from './components/FAQ'
 import ContactForm from './components/ContactForm'
 import Footer from './components/Footer'
 import ThemeSwitcher from './components/ThemeSwitcher'
+import MobileApplyBar from './components/MobileApplyBar'
+import MarketOpenings from './components/MarketOpenings'
 
 export default function App() {
   const [introDone, setIntroDone] = useState(false)
@@ -39,6 +41,7 @@ export default function App() {
       <main id="main">
         <Hero />
         <TrustBar />
+        <MarketOpenings />
         <LuxuryEcosystem />
         <About />
         <Capabilities />
@@ -48,6 +51,7 @@ export default function App() {
         <ContactForm />
       </main>
       <Footer />
+      <MobileApplyBar visible={introDone} />
     </div>
   )
 }

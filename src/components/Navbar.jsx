@@ -75,7 +75,7 @@ export default function Navbar({ visible = true }) {
               goTo('#contact')
             }}
           >
-            Contact Us
+            Apply now
           </ArrowButton>
           <button
             type="button"
@@ -119,7 +119,7 @@ export default function Navbar({ visible = true }) {
                   goTo('#contact')
                 }}
               >
-                Contact Us
+                Apply now
               </ArrowButton>
             </div>
           </motion.div>

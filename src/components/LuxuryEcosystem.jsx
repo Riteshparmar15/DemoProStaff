@@ -65,24 +65,24 @@ export default function LuxuryEcosystem() {
     <section
       id="brands-we-staff"
       className="site-section bg-cream"
-      aria-label="Retail brands whose stores we staff nationally and internationally"
+      aria-label="Retail brands you can work with"
     >
       <div className="site-shell">
         <div className="grid gap-8 border-y border-navy/10 py-10 md:grid-cols-3 md:gap-0 md:py-14">
           <Reveal className="md:pr-8">
             <p className="text-[11px] font-semibold tracking-[0.14em] text-eyebrow uppercase">
-              Brands we staff for
+              Brands you can work with
             </p>
             <h2 className="mt-4 max-w-[16ch] font-display text-[clamp(1.85rem,3.4vw,2.75rem)] font-bold leading-[1.08] tracking-[-0.03em] text-ink">
-              Luxury & international retail stores we hire into
+              Luxury & international retail floors we place into
             </h2>
           </Reveal>
 
           <Reveal delay={0.08} className="border-navy/10 md:border-x md:px-8">
               <p className="text-[15px] leading-relaxed text-navy/70 md:text-base">
-              ProStafff finds retail talent for these brand stores — floor teams, supervisors,
-              and leadership — across India, with UAE mandates covered from our India HQ desk.
-              Logos mark house formats we may hire into; they are not client endorsements.
+              Apply once — we match strong profiles to store, supervisor, and leadership roles
+              across India, with UAE international mandates reviewed from our careers desk.
+              Logos mark house formats we may place into; they are not job guarantees.
             </p>
           </Reveal>
 
@@ -90,7 +90,7 @@ export default function LuxuryEcosystem() {
             <div className="flex h-full flex-col justify-center">
               <Globe className="mb-3 h-7 w-7 text-ink" strokeWidth={1.6} />
               <p className="text-base font-semibold text-ink md:text-lg">
-                Markets we serve
+                Where you can work
               </p>
               <div className="mt-4 flex flex-wrap gap-2">
                 <span className="inline-flex items-center gap-2 rounded-full border border-navy/10 bg-white px-3 py-1.5 text-sm font-semibold text-ink">
@@ -110,9 +110,9 @@ export default function LuxuryEcosystem() {
           className="mt-6 rounded-2xl border border-navy/10 bg-accent-soft/70 px-4 py-3 text-center text-sm leading-relaxed text-ink md:mt-8"
           role="note"
         >
-          <span className="font-semibold">Not client logos.</span> Marks identify retail house
-          formats whose store networks we may hire into across India and the UAE. They do not
-          imply endorsement, employment, or partnership by those brands.
+          <span className="font-semibold">Not employer logos.</span> Marks identify retail house
+          formats whose store networks we may place applicants into across India and the UAE.
+          They do not imply endorsement or guaranteed employment by those brands.
         </div>
 
         <div className="mt-5 overflow-hidden border border-divider bg-white md:mt-6">
