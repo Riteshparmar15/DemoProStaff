@@ -40,7 +40,7 @@ function FlagUAE() {
 
 function LogoCell({ brand }) {
   return (
-    <div className="flex h-[88px] w-[168px] shrink-0 items-center justify-center border-r border-divider bg-white px-6 md:h-[100px] md:w-[200px]">
+    <div className="flex h-[96px] w-[180px] shrink-0 items-center justify-center border-r border-divider bg-white px-6 md:h-[108px] md:w-[210px]">
       <img
         src={brand.logo}
         alt={`${brand.name} — retail stores we staff nationally and internationally`}
@@ -49,7 +49,7 @@ function LogoCell({ brand }) {
         height={56}
         loading="lazy"
         decoding="async"
-        className="h-[40px] w-auto max-w-[140px] object-contain object-center md:h-[48px] md:max-w-[160px]"
+        className="h-[44px] w-auto max-w-[150px] object-contain object-center opacity-90 md:h-[52px] md:max-w-[170px]"
         draggable={false}
       />
     </div>

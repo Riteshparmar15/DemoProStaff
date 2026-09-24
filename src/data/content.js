@@ -1,3 +1,5 @@
+import { asset } from '../lib/asset'
+
 export const journeySteps = [
   { id: '01', label: 'Apply', sub: 'Submit your profile' },
   { id: '02', label: 'Match', sub: 'We review & shortlist' },
@@ -16,18 +18,18 @@ export const navLinks = [
 ]
 
 export const luxuryBrands = [
-  { name: 'Chanel', logo: '/logos/chanel.png?v=2' },
-  { name: 'Cartier', logo: '/logos/cartier.png?v=2' },
-  { name: 'Christian Louboutin', logo: '/logos/louboutin.png?v=2' },
-  { name: 'BVLGARI', logo: '/logos/bvlgari.png?v=2' },
-  { name: 'Rolex', logo: '/logos/rolex.png?v=2' },
-  { name: 'Tiffany & Co.', logo: '/logos/tiffany.png?v=2' },
-  { name: 'Nike', logo: '/logos/nike.png?v=2' },
-  { name: 'Sephora', logo: '/logos/sephora.png?v=2' },
-  { name: 'Zara', logo: '/logos/zara.png?v=2' },
-  { name: 'Bath & Body Works', logo: '/logos/bbw.png?v=2' },
-  { name: 'Adidas', logo: '/logos/adidas.png?v=2' },
-  { name: 'Louis Vuitton', logo: '/logos/lv.png?v=2' },
+  { name: 'Chanel', logo: asset('logos/chanel.png?v=3') },
+  { name: 'Cartier', logo: asset('logos/cartier.png?v=3') },
+  { name: 'Christian Louboutin', logo: asset('logos/louboutin.png?v=3') },
+  { name: 'BVLGARI', logo: asset('logos/bvlgari.png?v=3') },
+  { name: 'Rolex', logo: asset('logos/rolex.png?v=3') },
+  { name: 'Tiffany & Co.', logo: asset('logos/tiffany.png?v=3') },
+  { name: 'Nike', logo: asset('logos/nike.png?v=3') },
+  { name: 'Sephora', logo: asset('logos/sephora.png?v=3') },
+  { name: 'Zara', logo: asset('logos/zara.png?v=3') },
+  { name: 'Bath & Body Works', logo: asset('logos/bbw.png?v=3') },
+  { name: 'Adidas', logo: asset('logos/adidas.png?v=3') },
+  { name: 'Louis Vuitton', logo: asset('logos/lv.png?v=3') },
 ]
 
 export const snapshotRows = [

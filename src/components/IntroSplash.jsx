@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react'
 import { motion, useReducedMotion, AnimatePresence } from 'framer-motion'
 import { journeySteps } from '../data/content'
 import { easeEnter, easeSmooth } from '../hooks/useMotionSafe'
+import { asset } from '../lib/asset'
 
 export default function IntroSplash({ onComplete }) {
   const reduced = useReducedMotion()
@@ -59,11 +60,11 @@ export default function IntroSplash({ onComplete }) {
 
             <div className="text-center">
               <motion.img
-                src="/brand/prostafff-mark-light.svg"
+                src={asset('brand/prostafff-mark-light.svg')}
                 alt="ProStafff"
-                width={72}
-                height={72}
-                className="mx-auto mb-8 h-14 w-14 md:mb-10 md:h-[72px] md:w-[72px]"
+                width={80}
+                height={80}
+                className="mx-auto mb-8 h-16 w-16 rounded-[14px] object-contain md:mb-10 md:h-20 md:w-20"
                 initial={{ opacity: 0, scale: 0.85 }}
                 animate={{ opacity: 1, scale: 1 }}
                 transition={{ duration: 0.7, ease: easeEnter }}
