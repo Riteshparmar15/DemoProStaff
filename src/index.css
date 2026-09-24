@@ -5,18 +5,14 @@
    * ProStafff — Midnight Meridian (60 · 30 · 10)
    * 60% ivory base · 30% ink-navy structure · 10% copper CTA
    */
-  /* 60% — page background */
   --color-cream: #f7f4ef;
-  /* 30% — headlines, dark cards, footer, body structure */
   --color-navy: #1a2332;
   --color-ink: #1a2332;
   --color-raised: #1a2332;
   --color-divider: #d8d2c8;
-  /* 10% — CTAs and display accents only */
   --color-orange: #c45c26;
   --color-orange-hi: #a34a1e;
   --color-orange-light: #d4784a;
-  /* Soft fill / selection (tint of copper, not a 4th brand color) */
   --color-accent-soft: #efe4da;
   --color-orange-pale: #efe4da;
   --theme-structure-rgb: 26, 35, 50;
@@ -35,6 +31,8 @@
 @layer base {
   html {
     scroll-behavior: smooth;
+    -webkit-text-size-adjust: 100%;
+    text-size-adjust: 100%;
   }
 
   body {
@@ -45,6 +43,24 @@
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     overflow-x: hidden;
+    padding-left: env(safe-area-inset-left, 0);
+    padding-right: env(safe-area-inset-right, 0);
+  }
+
+  img,
+  video,
+  svg {
+    max-width: 100%;
+    height: auto;
+  }
+
+  @media (pointer: coarse) {
+    a,
+    button,
+    summary,
+    [role='button'] {
+      min-height: 44px;
+    }
   }
 
   * {
@@ -67,30 +83,80 @@
     max-width: 1120px;
     margin-left: auto;
     margin-right: auto;
-    padding-left: 1rem;
-    padding-right: 1rem;
+    padding-left: max(1rem, env(safe-area-inset-left, 0px));
+    padding-right: max(1rem, env(safe-area-inset-right, 0px));
   }
 
   .site-shell-narrow {
     max-width: 1000px;
   }
 
+  /* Tablet */
   @media (min-width: 768px) {
     .site-shell {
-      padding-left: 1.5rem;
-      padding-right: 1.5rem;
+      padding-left: max(1.5rem, env(safe-area-inset-left, 0px));
+      padding-right: max(1.5rem, env(safe-area-inset-right, 0px));
+    }
+  }
+
+  /* Desktop */
+  @media (min-width: 1280px) {
+    .site-shell {
+      max-width: 1200px;
+      padding-left: 2rem;
+      padding-right: 2rem;
+    }
+  }
+
+  /* Large desktop / small TV */
+  @media (min-width: 1536px) {
+    .site-shell {
+      max-width: 1320px;
+    }
+  }
+
+  /* TV / ultra-wide */
+  @media (min-width: 1920px) {
+    .site-shell {
+      max-width: 1480px;
+      padding-left: 2.5rem;
+      padding-right: 2.5rem;
     }
   }
 
   .site-section {
-    padding-top: 4rem;
-    padding-bottom: 4rem;
+    padding-top: 3.5rem;
+    padding-bottom: 3.5rem;
+  }
+
+  @media (min-width: 640px) {
+    .site-section {
+      padding-top: 4.5rem;
+      padding-bottom: 4.5rem;
+    }
   }
 
   @media (min-width: 768px) {
     .site-section {
       padding-top: 6rem;
       padding-bottom: 6rem;
+    }
+  }
+
+  @media (min-width: 1536px) {
+    .site-section {
+      padding-top: 7rem;
+      padding-bottom: 7rem;
+    }
+  }
+
+  .pb-mobile-cta {
+    padding-bottom: calc(5.75rem + env(safe-area-inset-bottom, 0px));
+  }
+
+  @media (min-width: 768px) {
+    .pb-mobile-cta {
+      padding-bottom: 0;
     }
   }
 

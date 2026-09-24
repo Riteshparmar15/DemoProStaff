@@ -116,7 +116,7 @@ export default function Footer() {
             </Reveal>
           </div>
 
-          <div className="grid gap-8 p-8 sm:grid-cols-2 md:grid-cols-4 md:gap-6 md:p-12 lg:px-14">
+          <div className="grid gap-8 p-6 sm:grid-cols-2 sm:p-8 md:grid-cols-4 md:gap-6 md:p-12 lg:px-14">
             {footerGroups.map((group, gi) => (
               <motion.div
                 key={group.title}

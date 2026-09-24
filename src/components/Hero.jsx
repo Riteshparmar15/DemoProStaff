@@ -6,14 +6,14 @@ export default function Hero() {
   return (
     <section
       id="top"
-      className="relative overflow-hidden bg-cream pt-28 md:pt-36"
+      className="relative overflow-hidden bg-cream pt-[7.5rem] sm:pt-28 md:pt-36 lg:pt-40"
       aria-label="Apply for retail jobs in India and the UAE"
     >
       <div className="pointer-events-none absolute inset-0 grid-bg opacity-40" />
 
       <div className="site-shell relative">
-        <Reveal y={24} scale={1} className="mb-10 hidden md:block">
-          <div className="grid grid-cols-5 gap-4">
+        <Reveal y={24} scale={1} className="mb-10 hidden lg:block">
+          <div className="grid grid-cols-5 gap-4 xl:gap-6">
             {journeySteps.map((step) => (
               <div key={step.id} className="border-t border-navy/20 pt-3">
                 <p className="text-xs font-semibold tracking-[0.08em] text-ink">
@@ -25,14 +25,14 @@ export default function Hero() {
           </div>
         </Reveal>
 
-        <Reveal y={16} scale={1} className="mb-8 md:hidden">
+        <Reveal y={16} scale={1} className="mb-8 lg:hidden">
           <div className="flex gap-3 overflow-x-auto pb-1 [-ms-overflow-style:none] [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
             {journeySteps.map((step) => (
               <div
                 key={step.id}
-                className="min-w-[7.5rem] shrink-0 border-t border-navy/20 pt-2"
+                className="min-w-[7.25rem] shrink-0 border-t border-navy/20 pt-2 sm:min-w-[8rem]"
               >
-                <p className="text-[11px] font-semibold tracking-[0.06em] text-ink">
+                <p className="text-[11px] font-semibold tracking-[0.06em] text-ink sm:text-xs">
                   {step.id} {step.label}
                 </p>
                 <p className="mt-0.5 text-[11px] text-navy/70">{step.sub}</p>
@@ -41,17 +41,17 @@ export default function Hero() {
           </div>
         </Reveal>
 
-        <div className="grid items-center gap-10 lg:grid-cols-[1.1fr_0.9fr] lg:gap-12">
+        <div className="grid items-center gap-8 md:gap-10 lg:grid-cols-[1.1fr_0.9fr] lg:gap-12 xl:gap-16">
           <div>
             <Reveal y={32}>
-              <p className="mb-5 inline-flex flex-wrap items-center gap-2 rounded-full border border-navy/10 bg-white px-3 py-1.5 text-[11px] font-semibold tracking-[0.14em] text-navy/70 uppercase">
-                <span className="h-1.5 w-1.5 rounded-full bg-orange" />
+              <p className="mb-4 inline-flex max-w-full flex-wrap items-center gap-2 rounded-full border border-navy/10 bg-white px-3 py-1.5 text-[10px] font-semibold tracking-[0.12em] text-navy/70 uppercase sm:mb-5 sm:text-[11px] sm:tracking-[0.14em]">
+                <span className="h-1.5 w-1.5 shrink-0 rounded-full bg-orange" />
                 India national · UAE international · Equal desks
               </p>
             </Reveal>
 
             <Reveal delay={0.06} y={40}>
-              <h1 className="max-w-[16ch] font-display text-[clamp(2.6rem,7vw,5.2rem)] font-bold leading-[0.98] tracking-[-0.035em] text-ink">
+              <h1 className="max-w-[16ch] font-display text-[clamp(2.25rem,8vw,5.4rem)] font-bold leading-[0.98] tracking-[-0.035em] text-ink">
                 Apply once.{' '}
                 <span className="text-orange">Both markets.</span>
               </h1>

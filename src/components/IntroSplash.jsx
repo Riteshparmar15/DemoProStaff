@@ -70,7 +70,7 @@ export default function IntroSplash({ onComplete }) {
                 transition={{ duration: 0.7, ease: easeEnter }}
               />
               <motion.div
-                className="font-display text-[18vw] font-bold leading-[0.9] tracking-[-0.04em] md:text-[9rem]"
+                className="font-display text-[clamp(2.75rem,15vw,9rem)] font-bold leading-[0.9] tracking-[-0.04em]"
                 initial={{ opacity: 0, y: 40 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.9, ease: easeEnter }}
@@ -78,7 +78,7 @@ export default function IntroSplash({ onComplete }) {
                 TALENT<span className="text-orange">.</span>
               </motion.div>
               <motion.div
-                className="font-display text-[18vw] font-bold leading-[0.9] tracking-[-0.04em] md:text-[9rem]"
+                className="font-display text-[clamp(2.75rem,15vw,9rem)] font-bold leading-[0.9] tracking-[-0.04em]"
                 initial={{ opacity: 0, y: 40 }}
                 animate={{ opacity: phase >= 1 ? 1 : 0, y: phase >= 1 ? 0 : 40 }}
                 transition={{ duration: 0.9, ease: easeEnter }}
@@ -96,15 +96,15 @@ export default function IntroSplash({ onComplete }) {
             </div>
           </div>
 
-          <div className="border-t border-cream/10 px-4 pb-8 pt-5 md:px-10">
-            <div className="mx-auto grid max-w-5xl grid-cols-5 gap-2 md:gap-4">
+          <div className="border-t border-cream/10 px-3 pb-[max(1.5rem,env(safe-area-inset-bottom))] pt-4 sm:px-4 sm:pb-8 sm:pt-5 md:px-10">
+            <div className="mx-auto flex max-w-5xl gap-2 overflow-x-auto pb-1 [-ms-overflow-style:none] [scrollbar-width:none] md:grid md:grid-cols-5 md:gap-4 md:overflow-visible [&::-webkit-scrollbar]:hidden">
               {journeySteps.map((step, i) => (
                 <motion.div
                   key={step.id}
                   initial={{ opacity: 0, y: 12 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ delay: 0.35 + i * 0.12, duration: 0.6, ease: easeEnter }}
-                  className="text-center md:text-left"
+                  className="min-w-[4.5rem] shrink-0 text-center md:min-w-0 md:text-left"
                 >
                   <div className="mb-2 h-[2px] overflow-hidden rounded-full bg-cream/15">
                     <motion.div

@@ -14,13 +14,13 @@ import Footer from './components/Footer'
 import ThemeSwitcher from './components/ThemeSwitcher'
 import MobileApplyBar from './components/MobileApplyBar'
 import MarketOpenings from './components/MarketOpenings'
+import SeoJsonLd from './components/SeoJsonLd'
 
 export default function App() {
   const [introDone, setIntroDone] = useState(false)
   const handleIntroComplete = useCallback(() => setIntroDone(true), [])
 
   useEffect(() => {
-    // Refresh / first load always opens at the top
     if ('scrollRestoration' in window.history) {
       window.history.scrollRestoration = 'manual'
     }
@@ -28,9 +28,10 @@ export default function App() {
   }, [])
 
   return (
-    <div className="min-h-screen bg-cream text-ink">
+    <div className="min-h-screen bg-cream text-ink pb-mobile-cta">
+      <SeoJsonLd />
       <a
-        href="#top"
+        href="#main"
         className="sr-only focus:not-sr-only focus:absolute focus:left-4 focus:top-4 focus:z-[70] focus:rounded-full focus:bg-orange focus:px-4 focus:py-2 focus:text-sm focus:font-semibold focus:text-cream"
       >
         Skip to content

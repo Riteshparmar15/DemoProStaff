@@ -36,7 +36,7 @@ export default function ThemeSwitcher() {
   }
 
   return (
-    <div className="pointer-events-none fixed right-3 top-3 z-[80] md:right-5 md:top-5">
+    <div className="pointer-events-none fixed bottom-[calc(5.5rem+env(safe-area-inset-bottom,0px))] left-3 z-[45] md:bottom-auto md:left-auto md:right-5 md:top-[5.75rem] lg:top-6">
       <div className="pointer-events-auto relative">
         <button
           type="button"
@@ -44,7 +44,7 @@ export default function ThemeSwitcher() {
           aria-haspopup="listbox"
           aria-label="Change website color palette"
           onClick={() => setOpen((v) => !v)}
-          className="flex items-center gap-2 rounded-full border border-navy/15 bg-white/95 px-3 py-2 shadow-[0_8px_28px_rgba(26,35,50,0.12)] backdrop-blur-md transition hover:border-navy/25"
+          className="flex min-h-11 items-center gap-2 rounded-full border border-navy/15 bg-white/95 px-3 py-2 shadow-[0_8px_28px_rgba(26,35,50,0.12)] backdrop-blur-md transition hover:border-navy/25"
         >
           <span className="flex items-center gap-1" aria-hidden>
             <span
@@ -76,7 +76,7 @@ export default function ThemeSwitcher() {
             <div
               role="listbox"
               aria-label="Corporate color palettes"
-              className="absolute right-0 z-10 mt-2 w-[min(92vw,300px)] overflow-hidden rounded-[22px] border border-navy/10 bg-white shadow-[0_20px_50px_rgba(26,35,50,0.16)]"
+              className="absolute bottom-full left-0 z-10 mb-2 w-[min(92vw,300px)] overflow-hidden rounded-[22px] border border-navy/10 bg-white shadow-[0_20px_50px_rgba(26,35,50,0.16)] md:bottom-auto md:left-auto md:right-0 md:top-full md:mb-0 md:mt-2"
             >
               <div className="border-b border-navy/8 px-4 py-3">
                 <p className="text-[11px] font-semibold tracking-[0.14em] text-eyebrow uppercase">

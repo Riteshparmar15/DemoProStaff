@@ -1,0 +1,24 @@
+{
+  "name": "ProStafff Solution — Retail Jobs",
+  "short_name": "ProStafff",
+  "description": "Apply for retail jobs in India and the UAE.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#f7f4ef",
+  "theme_color": "#1a2332",
+  "lang": "en",
+  "icons": [
+    {
+      "src": "/brand/prostafff-mark.png",
+      "sizes": "1024x1024",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any"
+    }
+  ]
+}
